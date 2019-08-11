@@ -128,14 +128,14 @@ main {
         width: 100vw !important;
         left: 0;
         min-height: 100vh;
-    }
+    } */
 
     #about-title,
     #contact-title,
     #rd-title,
     #services-title {
         margin-top: 0 !important;
-    } */
+    } 
 
     .form-box {
         width: 100vw !important;
