@@ -147,20 +147,11 @@ main {
         margin-top: 0 !important;
     } 
 
-    .services-box {
-        top: 100px !important;
-    }
-
-    .about-box  {
-        top: 100px !important;
-    }
-
-    .rd-box {
-        top: 100px !important;
-    }
-
+    .services-box,
+    .about-box,
+    .rd-box,
     .contact-box {
-        top: 100px !important;
+        top: 50px !important;
     }
 
     .form-box {
