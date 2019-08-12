@@ -72,7 +72,7 @@
       const message = document.querySelector('#message').value;
       const captcha = document.querySelector('#g-recaptcha-response');
 
-      fetch('/webformmailer.php', {
+      fetch('/subscribe', {
         method: 'POST',
         headers: {
           'Accept': 'application/json, text/plain, */*',
