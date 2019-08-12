@@ -76,28 +76,38 @@ main {
 #form-btn {
     position: absolute;
     top: -20px;
-    right: 65px;
+    right: -25px;
     
     z-index: 5;
-    max-width: 50px;
-    max-height: 50px;
-    background: #fff;
-    border-radius: 50%;
+    width: 195px;
+    height: 55px;
+    background: rgba(255,255,255, .85);
+    border-radius: 6px;
 
     cursor: pointer;
 
     transition: all .25s ease-in-out;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    border: 1px solid #000;
+}
+
+#form-btn span {
+    color: #000;
 }
 
 #form-btn:hover {
-    max-width: 60px;
-    max-height: 60px;
+    height: 65px;
+    width: 205px;
     top: -25px;
-    right: 60px;
+    right: -30px;
 }
 
 #form-btn img {
-    max-width: 100%;
+    max-width: 50px;
 }
 
 #contact-btn {
