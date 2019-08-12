@@ -52,6 +52,10 @@ main {
     max-width: 1200px;
 }
 
+.nav-item .lead {
+    color: #fff !important;
+}
+
 .show {
     right: 32% !important;
 }
