@@ -1,3 +1,23 @@
+<?php
+    if (isset($_POST['submit'])) {
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $telephone = $_POST['telephone'];
+        $message = $_POST['message'];
+        $secretKey = "6LfEZrIUAAAAAENsFIgdpcNzSFLgyjc1VnNAdrJ3";
+        $responseKey = $_POST['g-recaptcha-response'];
+        $userIP = $_SERVER['REMOTE_ADDR'];
+
+        $url = "https://www.google.com/recaptcha/api/siteverify?secret=$secretKey&response=$responseKey&remoteip=$userIP";
+        $response = file_get_contents($url);
+        $response = json_decode($response);
+        if ($response->success)
+            echo "Verification success. Your name is: $username";
+        else
+            echo "Verification failed!";
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,39 +73,13 @@
               <input type="email" class="form-control my-2 d-block py-4" id="email" placeholder="Enter Your Email Address">
               <input type="number" id="telephone" class="form-control my-2 d-block py-4" placeholder="Enter Your Mobile Number">
               <textarea id="message" class="form-control my-2 d-block py-4" placeholder="Enter Your Message"></textarea>
-              <input type="submit" value="SUBMIT" id="submit" name="submit" class="btn btn-block btn-primary my-2 btn-lg">
+              <input type="submit" value="SUBMIT" class="btn btn-block btn-primary my-2 btn-lg">
               <div class="g-recaptcha" data-sitekey="6LfEZrIUAAAAAENsFIgdpcNzSFLgyjc1VnNAdrJ3"></div>
           </form>
           <script src="https://www.google.com/recaptcha/api.js" async defer></script>
       </div>
     </div>
 
-    <!-- <script>
-    document.getElementById('mainForm').addEventListener('submit', submitForm);
-
-    function submitForm(e) {
-      e.preventDefault();
-      
-      const name = document.querySelector('#name').value;
-      const email = document.querySelector('#email').value;
-      const telephone = document.querySelector('#telephone').value;
-      const message = document.querySelector('#message').value;
-      const captcha = document.querySelector('#g-recaptcha-response');
-
-      fetch('/subscribe', {
-        method: 'POST',
-        headers: {
-          'Accept': 'application/json, text/plain, */*',
-          'Content-type': 'application/json'
-        },
-        body:JSON.stringify({name: name, email: email, telephone: telephone, message: message, captcha: captcha})
-      })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-      });
-    }
-    </script> -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
