@@ -51,7 +51,7 @@
     "jsbn": "^0.1.1",
     "json-schema": "^0.2.3",
     "json-schema-traverse": "^0.4.1",
-    "kind-of": "^6.0.2",
+    "kind-of": "^6.0.3",
     "lowercase-keys": "^1.0.1",
     "map-cache": "^0.2.2",
     "map-visit": "^1.0.0",
